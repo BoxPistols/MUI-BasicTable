@@ -17,6 +17,8 @@ export interface TableProps {
   email: string;
   first_name: string;
 }
+// TODO: Add Styled
+// .MuiTableCell-root {...
 
 // import json Table
 export function JpTable({ data }: TableProps): JSX.Element {
@@ -26,8 +28,8 @@ export function JpTable({ data }: TableProps): JSX.Element {
         <Table
           sx={{
             minWidth: 650,
-            whiteSpace: "nowrap",
             maxWidth: 650,
+            whiteSpace: "nowrap",
             overflow: "auto"
             // display: "grid"
             // gridTemplateColumns: "1fr, auto"
@@ -39,21 +41,11 @@ export function JpTable({ data }: TableProps): JSX.Element {
               <TableCell component="th" scope="row">
                 ID
               </TableCell>
-              <TableCell component="th" scope="row">
-                名前の表示
-              </TableCell>
-              <TableCell component="th" scope="row">
-                メールの表示
-              </TableCell>
-              <TableCell component="th" scope="row">
-                メールの表示をしますのですがあああ
-              </TableCell>
-              <TableCell component="th" scope="row">
-                住所の表示をしてみます
-              </TableCell>
-              <TableCell component="th" scope="row">
-                住所の表示をしてみます
-              </TableCell>
+              <TableCell>名前の表示</TableCell>
+              <TableCell>メールの表示</TableCell>
+              <TableCell>メールの表示をしますのですがあああ</TableCell>
+              <TableCell>住所の表示をしてみます</TableCell>
+              <TableCell>住所の表示をしてみます</TableCell>
             </TableRow>
           </TableHead>
           {/* <tbody> */}
@@ -63,14 +55,15 @@ export function JpTable({ data }: TableProps): JSX.Element {
                 key={data.id}
                 sx={{
                   "&:last-child td, &:last-child th": { border: 0 }
+                  // color: "teal"
                 }}
               >
                 <TableCell component="td">{data.id}</TableCell>
-                <TableCell component="td">{data.first_name}</TableCell>
-                <TableCell component="td">{data.email}</TableCell>
-                <TableCell component="td">{data.email}</TableCell>
-                <TableCell component="td">{data.address}</TableCell>
-                <TableCell component="td">{data.address}</TableCell>
+                <TableCell>{data.first_name}</TableCell>
+                <TableCell>{data.email}</TableCell>
+                <TableCell>{data.email}</TableCell>
+                <TableCell>{data.address}</TableCell>
+                <TableCell>{data.address}</TableCell>
               </TableRow>
             ))}
           </TableBody>
