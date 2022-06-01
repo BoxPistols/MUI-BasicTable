@@ -8,22 +8,25 @@
     {
       "id": 7,
       "email": "michael.lawson@reqres.in",
-      "first_name": "Michael",
+      "first_name": "佐竹 士郎",
       "last_name": "Lawson",
+      "address": "大阪府大阪市住之江区中加賀屋2丁目1番7号 ライオンズマンション大阪中央",
       "avatar": "https://reqres.in/img/faces/7-image.jpg"
     },
     {
       "id": 8,
       "email": "lindsay.ferguson@reqres.in",
-      "first_name": "Lindsay",
+      "first_name": "長谷川 秀和",
       "last_name": "Ferguson",
+      "address": "埼玉県新座市野火止1丁目3番地3号",
       "avatar": "https://reqres.in/img/faces/8-image.jpg"
     },
     {
       "id": 9,
       "email": "tobias.funke@reqres.in",
-      "first_name": "Tobias",
+      "first_name": "宮本 一馬",
       "last_name": "Funke",
+      "address": "福岡県福岡市早良区飯倉2丁目1番地7号",
       "avatar": "https://reqres.in/img/faces/9-image.jpg"
     },
     {
@@ -31,6 +34,7 @@
       "email": "byron.fields@reqres.in",
       "first_name": "Byron",
       "last_name": "Fields",
+      "address": "大阪府大阪市住之江区中加賀屋2丁目1番7号 ライオンズマンション大阪中央",
       "avatar": "https://reqres.in/img/faces/10-image.jpg"
     },
     {
@@ -38,6 +42,7 @@
       "email": "george.edwards@reqres.in",
       "first_name": "George",
       "last_name": "Edwards",
+      "address": "大阪府大阪市住之江区中加賀屋2丁目1番7号 ライオンズマンション大阪中央",
       "avatar": "https://reqres.in/img/faces/11-image.jpg"
     },
     {
@@ -45,6 +50,7 @@
       "email": "rachel.howell@reqres.in",
       "first_name": "Rachel",
       "last_name": "Howell",
+      "address": "大阪府大阪市住之江区中加賀屋2丁目1番7号 ライオンズマンション大阪中央",
       "avatar": "https://reqres.in/img/faces/12-image.jpg"
     }
   ],

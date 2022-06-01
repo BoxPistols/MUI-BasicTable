@@ -1,15 +1,15 @@
-import * as React from 'react'
-import Table from '@mui/material/Table'
-import TableBody from '@mui/material/TableBody'
-import TableCell from '@mui/material/TableCell'
-import TableContainer from '@mui/material/TableContainer'
-import TableHead from '@mui/material/TableHead'
-import TableRow from '@mui/material/TableRow'
-import Paper from '@mui/material/Paper'
+import * as React from "react";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
 // Add data
 // FIXME!: tsconfig
-import Data from './data.json' // 追加
-const Datas = Data.data
+import Data from "./data.json"; // 追加
+const Datas = Data.data;
 
 // 元の関数
 /*function createData(
@@ -32,58 +32,84 @@ const rows = [
 */
 // Add CRow ----->
 interface CRow {
-  id: number
-  data: string
-  group: string
+  id: number;
+  cdata: string;
+  group: string;
 }
 export interface TableProps {
-  crows: CRow[]
-  id: number
-  data: string
-  group: string
+  // crows: CRow[];
+  id: number;
+  // data: string;
+  // group: string;
+  // json
+  data: Data[];
+  email: string;
+  first_name: string;
 }
 
+const crows: CRow[] = [
+  { id: 0, cdata: "foo", group: "group-a" },
+  { id: 1, cdata: "bar", group: "group-b" },
+  { id: 2, cdata: "baz", group: "group-c" }
+];
+// Add CRow <-----
+
 // import json Table
-export function AddTable({ crows }: TableProps) {
+export function AddTable({ data }: TableProps): JSX.Element {
   return (
     <>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell>ID</TableCell>
-              <TableCell>first_name</TableCell>
-              <TableCell>email</TableCell>
+              <TableCell component="th" scope="row">
+                ID
+              </TableCell>
+              <TableCell component="th" scope="row">
+                名前の表示
+              </TableCell>
+              <TableCell component="th" scope="row">
+                メールの表示
+              </TableCell>
+              <TableCell component="th" scope="row">
+                メールの表示をしますのですがあああ
+              </TableCell>
+              <TableCell component="th" scope="row">
+                住所の表示をしてみます
+              </TableCell>
+              <TableCell component="th" scope="row">
+                住所の表示をしてみます
+              </TableCell>
             </TableRow>
           </TableHead>
+          {/* <tbody> */}
+          <TableBody>
+            {Datas.map((data) => (
+              <TableRow
+                key={data.id}
+                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+              >
+                <TableCell component="td">{data.id}</TableCell>
+                <TableCell component="td">{data.first_name}</TableCell>
+                <TableCell component="td">{data.email}</TableCell>
+                <TableCell component="td">{data.email}</TableCell>
+                <TableCell component="td">{data.address}</TableCell>
+                <TableCell component="td">{data.address}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
         </Table>
-        <TableBody>
-          {Datas.map((user) => (
-            <TableRow key={user.id}>
-              <TableCell component="th" scope="row">
-                {user.first_name}
-              </TableCell>
-              <TableCell component="th" scope="row">
-                {user.email}
-              </TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
+        {/* </tbody> */}
       </TableContainer>
     </>
-  )
+  );
 }
-
-const crows: CRow[] = [
-  { id: 0, data: 'foo', group: 'group-a' },
-  { id: 1, data: 'bar', group: 'group-b' },
-  { id: 2, data: 'baz', group: 'group-c' },
-]
-// Add CRow <-----
 
 export default function CustomDemo() {
   return (
     <>
+      <AddTable id={0} data={[]} email={""} first_name={""} />
+      {/* json to table */}
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
@@ -101,15 +127,15 @@ export default function CustomDemo() {
               <TableRow
                 // key={row.name}
                 key={crow.id}
-                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
-                <TableCell component="th" scope="row">
+                <TableCell component="td" scope="row">
                   {crow.id}
                 </TableCell>
-                <TableCell component="th" scope="row">
-                  {crow.data}
+                <TableCell component="td" scope="row">
+                  {crow.cdata}
                 </TableCell>
-                <TableCell component="th" scope="row">
+                <TableCell component="td" scope="row">
                   {crow.group}
                 </TableCell>
               </TableRow>
@@ -118,8 +144,6 @@ export default function CustomDemo() {
         </Table>
       </TableContainer>
       {/* json default map */}
-      <AddTable crows={[]} />
-      {/* json to table */}
     </>
-  )
+  );
 }
